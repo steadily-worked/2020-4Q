@@ -16,6 +16,7 @@ function removeSpecial (e) {
 
 /* keyup */
 document.addEventListener('keyup', keyupFunction, false);
+document.addEventListener('click', keyupFunction, false);
 function keyupFunction(e) {
     var keyCode = e.keyCode;
     var task = taskBox.value.trim();
@@ -34,6 +35,7 @@ function keyupFunction(e) {
     } 
 }
 
+/* Autocomplete using jQuery*/
 $(function() {
 	var languages = [
 		"ActionScript", "AppleScript", "Asp","BASIC", "C",
@@ -44,25 +46,8 @@ $(function() {
 	];
 
 	$( "#text_task" ).autocomplete({
-		source: languages
+        source: languages,
 	});
 });
 
 
-/* Autocomplete using jQuery*/
-
-// $(function() {
-//     var availableLanguages = ['파이썬','Django', 'Python', 'JavaScript', 'Java', 'Go' ,'C', 'C#', 'C++'];
-//     $('#text_task').autocomplete({
-//         source: availableLanguages,
-//         select: function(event, ui) {
-//             console.log(ui.item);
-//         },
-//         focus: function(event, ui) {
-//             return false;
-//             //event.preventDefault();
-//         },
-//         minLength: 1,
-//         autoFocus: true,
-//     });
-// });
