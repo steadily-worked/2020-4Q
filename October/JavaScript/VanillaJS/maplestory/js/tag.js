@@ -32,7 +32,7 @@ function keyupFunction(e) {
             removeBtn.parentNode.removeChild(removeBtn);
             newLI.parentNode.removeChild(newLI);
         });
-    } 
+    }
 }
 
 /* Autocomplete using jQuery*/
@@ -47,7 +47,11 @@ $(function() {
 
 	$( "#text_task" ).autocomplete({
         source: languages,
+
 	});
 });
 
 
+
+
+// 중복 태그 방지, 최대 글자수 제한, 삭제버튼 li 안에 넣기
