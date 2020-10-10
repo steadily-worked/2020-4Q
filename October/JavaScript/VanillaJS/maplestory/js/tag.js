@@ -13,14 +13,6 @@ taskBox.addEventListener('keyup',  removeSpecial);
 function removeSpecial (e) {
    e.target.value = e.target.value.replace(/[^ㄱ-힣a-zA-Z0-9+#]/gi,"");
 }
-$(document).ready(function(){
-    $('#text_task').keyup(function(){
-        if ($(this).val().length > $(this).attr('maxlength')) {
-            alert('제한길이 초과');
-            $(this).val($(this).val().substr(0, $(this).attr('maxlength')));
-        }
-    });
-});
 
 /* click */
 document.addEventListener('click', clickFunction, false);
@@ -76,3 +68,5 @@ $(function() {
 
 
 // 중복 태그 방지, 최대 글자수 제한, 삭제버튼 li 안에 넣기
+
+// 최대 글자수 제한 -> maxLength 속성을 li에 걸어야 될까? 아니면 text type input에 걸어야 될까?
