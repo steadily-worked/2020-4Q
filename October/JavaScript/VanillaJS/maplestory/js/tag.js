@@ -11,19 +11,41 @@ var taskList = document.getElementById('list_tasks');
 /* Prevent input other than Korean, English and numbers */
 taskBox.addEventListener('keyup',  removeSpecial);
 function removeSpecial (e) {
-    e.target.value = e.target.value.replace(/[^ㄱ-힣a-zA-Z0-9+#]/gi,"");
+   e.target.value = e.target.value.replace(/[^ㄱ-힣a-zA-Z0-9+#]/gi,"");
+}
+$(document).ready(function(){
+    $('#text_task').keyup(function(){
+        if ($(this).val().length > $(this).attr('maxlength')) {
+            alert('제한길이 초과');
+            $(this).val($(this).val().substr(0, $(this).attr('maxlength')));
+        }
+    });
+});
+
+/* click */
+document.addEventListener('click', clickFunction, false);
+function clickFunction(e) {
+    var task = taskBox.value.trim();
+    var newLI = document.createElement('li');
+    var removeBtn = document.createElement('button');
+    var element = newLI.appendChild(document.createTextNode(task));
+    if (taskBox.value != "") {
+        e.preventDefault();
+        taskList.appendChild(newLI);
+        taskList.appendChild(removeBtn);
+        taskBox.value = '';
+    }
 }
 
 /* keyup */
 document.addEventListener('keyup', keyupFunction, false);
-document.addEventListener('click', keyupFunction, false);
 function keyupFunction(e) {
     var keyCode = e.keyCode;
     var task = taskBox.value.trim();
     var newLI = document.createElement('li');
     var removeBtn = document.createElement('button');
     var element = newLI.appendChild(document.createTextNode(task));
-    if ((taskBox.value != "") && (e.keyCode === 188 || e.keyCode === 13 || e.keyCode === 32))  {
+    if ((taskBox.value != "") && (keyCode === 188 || keyCode === 13 || keyCode === 32))  {
         e.preventDefault();
         taskList.appendChild(newLI);
         taskList.appendChild(removeBtn);
@@ -46,8 +68,7 @@ $(function() {
 	];
 
 	$( "#text_task" ).autocomplete({
-        source: languages,
-
+        source: languages
 	});
 });
 
