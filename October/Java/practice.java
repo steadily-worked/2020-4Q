@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// 중간고사 과제입니다. 201701391 국제통상학과 박상민입니다.
 // 반복문, 조건문, break 또는 continue, 배열과 문자열을모두 포함하는 프로그램 만들기
 public class ParkSangMin {
 
