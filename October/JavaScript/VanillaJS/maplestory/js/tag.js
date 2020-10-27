@@ -44,6 +44,7 @@ function keyupFunction(e) {
         e.preventDefault();
         taskList.appendChild(newLI);
         newLI.appendChild(removeBtn);
+        removeBtn.innerHTML = "X";
         taskBox.value = '';
         removeBtn.addEventListener('click', function() {
             removeBtn.parentNode.removeChild(removeBtn);

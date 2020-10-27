@@ -17,6 +17,13 @@ ul {
     background-color: blue;
     list-style: none;
 }
+#list_tasks > li > button {
+  margin-left: 5px;
+  background-color: transparent;
+  color: yellow;
+  border: 0;
+  outline: 0;
+}
 .ui-menu {
     display: block;
 }
