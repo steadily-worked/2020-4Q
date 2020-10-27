@@ -7,6 +7,7 @@ var elements = document.getElementById('element');
 var taskSubmit = document.getElementById('btn_add_task');
 var taskBox = document.querySelector('#text_task');
 var taskList = document.getElementById('list_tasks');
+var taskLi = document.querySelectorAll('ul li');
 
 /* Prevent input other than Korean, English and numbers */
 taskBox.addEventListener('keyup',  removeSpecial);
@@ -14,8 +15,10 @@ function removeSpecial (e) {
    e.target.value = e.target.value.replace(/[^ㄱ-힣a-zA-Z0-9+#]/gi,"");
 }
 
+/* Prevent duplicate tags */
+
 /* click */
-document.addEventListener('click', clickFunction, false);
+taskSubmit.addEventListener('click', clickFunction, false);
 function clickFunction(e) {
     var task = taskBox.value.trim();
     var newLI = document.createElement('li');
@@ -33,14 +36,14 @@ function clickFunction(e) {
 document.addEventListener('keyup', keyupFunction, false);
 function keyupFunction(e) {
     var keyCode = e.keyCode;
-    var task = taskBox.value.trim();
+    var task = taskBox.value.trim().toLowerCase();
     var newLI = document.createElement('li');
     var removeBtn = document.createElement('button');
     var element = newLI.appendChild(document.createTextNode(task));
-    if ((taskBox.value != "") && (keyCode === 188 || keyCode === 13 || keyCode === 32))  {
+    if ((taskBox.value != "") && !(task in taskLi) && (keyCode === 188 || keyCode === 13 || keyCode === 32))  {
         e.preventDefault();
         taskList.appendChild(newLI);
-        taskList.appendChild(removeBtn);
+        newLI.appendChild(removeBtn);
         taskBox.value = '';
         removeBtn.addEventListener('click', function() {
             removeBtn.parentNode.removeChild(removeBtn);
@@ -67,6 +70,4 @@ $(function() {
 
 
 
-// 중복 태그 방지, 최대 글자수 제한, 삭제버튼 li 안에 넣기
-
-// 최대 글자수 제한 -> maxLength 속성을 li에 걸어야 될까? 아니면 text type input에 걸어야 될까?
+// 중복 태그 방지
