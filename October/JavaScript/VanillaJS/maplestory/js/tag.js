@@ -20,15 +20,20 @@ function removeSpecial (e) {
 /* click */
 taskSubmit.addEventListener('click', clickFunction, false);
 function clickFunction(e) {
-    var task = taskBox.value.trim();
-    var newLI = document.createElement('li');
+    var task = taskBox.value.trim().toLowerCase();
+    var newSpan = document.createElement('span');
     var removeBtn = document.createElement('button');
-    var element = newLI.appendChild(document.createTextNode(task));
+    var element = newSpan.appendChild(document.createTextNode(task));
     if (taskBox.value != "") {
         e.preventDefault();
-        taskList.appendChild(newLI);
-        taskList.appendChild(removeBtn);
+        taskList.appendChild(newSpan);
+        newSpan.appendChild(removeBtn);
+        removeBtn.innerHTML = "X";
         taskBox.value = '';
+        removeBtn.addEventListener('click', function() {
+            removeBtn.parentNode.removeChild(removeBtn);
+            newSpan.parentNode.removeChild(newSpan);
+        });
     }
 }
 
@@ -37,18 +42,18 @@ document.addEventListener('keyup', keyupFunction, false);
 function keyupFunction(e) {
     var keyCode = e.keyCode;
     var task = taskBox.value.trim().toLowerCase();
-    var newLI = document.createElement('li');
+    var newSpan = document.createElement('span');
     var removeBtn = document.createElement('button');
-    var element = newLI.appendChild(document.createTextNode(task));
-    if ((taskBox.value != "") && !(task in taskLi) && (keyCode === 188 || keyCode === 13 || keyCode === 32))  {
+    var element = newSpan.appendChild(document.createTextNode(task));
+    if ((taskBox.value != "") && !(taskLi.includes(taskBox.value)) && (keyCode === 188 || keyCode === 13 || keyCode === 32))  {
         e.preventDefault();
-        taskList.appendChild(newLI);
-        newLI.appendChild(removeBtn);
+        taskList.appendChild(newSpan);
+        newSpan.appendChild(removeBtn);
         removeBtn.innerHTML = "X";
         taskBox.value = '';
         removeBtn.addEventListener('click', function() {
             removeBtn.parentNode.removeChild(removeBtn);
-            newLI.parentNode.removeChild(newLI);
+            newSpan.parentNode.removeChild(newSpan);
         });
     }
 }
@@ -69,6 +74,6 @@ $(function() {
 });
 
 
-
-
-// 중복 태그 방지
+// 중복 태그 방지만 하면 끝
+// if문에 조건을 넣는 건 아닌 것 같다.. 왜냐면.. !(taskLi.includes(taskBox.value)) 자체가
+// 'taskBox.value가 taskLi에 들어있지 않은 경우' 인데..
