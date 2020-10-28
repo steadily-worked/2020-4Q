@@ -8,6 +8,8 @@ var taskSubmit = document.getElementById('btn_add_task');
 var taskBox = document.querySelector('#text_task');
 var taskList = document.getElementById('list_tasks');
 var taskLi = document.querySelectorAll('ul li');
+taskBox.onkeyup = keyupFunction;
+var tags = [];
 
 /* Prevent input other than Korean, English and numbers */
 taskBox.addEventListener('keyup',  removeSpecial);
@@ -45,7 +47,10 @@ function keyupFunction(e) {
     var newSpan = document.createElement('span');
     var removeBtn = document.createElement('button');
     var element = newSpan.appendChild(document.createTextNode(task));
-    if ((taskBox.value != "") && !(taskLi.includes(taskBox.value)) && (keyCode === 188 || keyCode === 13 || keyCode === 32))  {
+    if (!canAdd(task, tags)) {
+        return;
+    }
+    if ((taskBox.value != "") && (keyCode === 188 || keyCode === 13 || keyCode === 32))  {
         e.preventDefault();
         taskList.appendChild(newSpan);
         newSpan.appendChild(removeBtn);
@@ -72,7 +77,9 @@ $(function() {
         source: languages
 	});
 });
-
+function canAdd(task, tags) {
+    return !tags.includes(task);
+}
 
 // 중복 태그 방지만 하면 끝
 // if문에 조건을 넣는 건 아닌 것 같다.. 왜냐면.. !(taskLi.includes(taskBox.value)) 자체가
