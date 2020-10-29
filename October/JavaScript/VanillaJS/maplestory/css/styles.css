@@ -7,7 +7,7 @@ ul {
     flex-direction: row;
     padding: 0;
 }
-#list_tasks > span {
+#list_tasks > li {
     padding: 2px 3px;
     text-align: center;
     border-radius: 5px;
@@ -17,7 +17,7 @@ ul {
     background-color: blue;
     list-style: none;
 }
-#list_tasks > span > button {
+#list_tasks > li > button {
   margin-left: 5px;
   background-color: transparent;
   color: yellow;
