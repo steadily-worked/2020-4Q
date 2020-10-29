@@ -26,7 +26,7 @@ $("#text_task").keyup(function(e){
         var removeBtn = document.createElement('button');
         var element = newLI.appendChild(document.createTextNode(task));
         if((taskBox.value != "")  && checkSame.includes(task)===false){
-            checkSame.push(task)
+            checkSame.push(task);
             taskList.appendChild(newLI);
             newLI.appendChild(removeBtn);
             removeBtn.innerHTML = "X";
@@ -34,7 +34,7 @@ $("#text_task").keyup(function(e){
             removeBtn.addEventListener('click', function() {
                 removeBtn.parentNode.removeChild(removeBtn);
                 newLI.parentNode.removeChild(newLI);
-                checkSame.splice(task);
+                checkSame.splice(checkSame.indexOf(task), 1);
             });
         }else{
             taskBox.value='';
@@ -58,11 +58,16 @@ function clickFunction(e) {
         removeBtn.addEventListener('click', function() {
             removeBtn.parentNode.removeChild(removeBtn);
             newLi.parentNode.removeChild(newLi);
+            checkSame.splice(checkSame.indexOf(task), 1);
         })} else {
             taskBox.value='';
             alert("중복된 태그입니다.");
         };
 }
+// filter로 value가 task면 splice하거나,
+// indexOf(value)로 index를 찾은 후에 그 index를 splice해도 됨.
+
+
 
 // /* keyup */
 // document.addEventListener('keyup', keyupFunction, false);
@@ -107,5 +112,3 @@ $(function() {
 
 
 // 중복 태그 방지만 하면 끝
-// if문에 조건을 넣는 건 아닌 것 같다.. 왜냐면.. !(taskLi.includes(taskBox.value)) 자체가
-// 'taskBox.value가 taskLi에 들어있지 않은 경우' 인데..
