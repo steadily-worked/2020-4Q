@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+  body {
+    display: flex;
+    height: 100vh;
+  }
+
+  #root {
+    margin: auto;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+  }
+
+  #tags-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid gray;
+    padding-bottom: 10px;
+    width: 500px;
+  }
+
+  #tags-wrap > * {
+    margin: 10px 0 0 10px;
+  }
+
+  .tag-wrap {
+    background: lightblue;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .tag-text {
+    font-size: 10px;
+    color: white;
+  }
+
+  #tag-input {
+    margin-left: 10px;
+    outline: none;
+    flex-grow: 1;
+    font-size: 14px;
+  }
+
+  .x-button {
+    margin-left: 10px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .x-text {
+    font-size: 10px;
+    color: white;
+    line-height: 15px;
+  }
+</style>
+<body>
+<div id="root">
+    <div id="tags-wrap">
+        <input id="tag-input" placeholder="Tags,">
+    </div>
+</div>
+<script src='js/sample.js'></script>
+</body>
+</html>
+
+<!--<div class="tag-wrap">-->
+<!--    <span class="tag-text">Tag Name</span>-->
+<!--    <button type="button" class="x-button">-->
+<!--        <span class="x-text">X</span>-->
+<!--    </button>-->
+<!--</div>-->
