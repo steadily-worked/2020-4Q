@@ -37,9 +37,12 @@ export default LikeButton;
 - React -> Component이다. Component를 만드는 방법 두 가지
 
 1) Class -> React에서 제공하는 컴포넌트를 extends(상속)해서 만들 수 있다.
-2) Function -> function App() {
+2) Function
+```js
+function App() {
     return <h1>Hello</h1>
 }
+```
 이런식으로 함수를 만들어서 사용한다.
 
 클래스 -> 어렵고, this를 불러와야(호출해야) 되는 것이 있고, 추가로 binding issue가 있다.
