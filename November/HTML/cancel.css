@@ -1,0 +1,64 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+header {
+  width: 100%;
+  height: 12.5em;
+  position: relative;
+}
+
+.header_right {
+  position: absolute;
+  display: flex;
+  right: 160px;
+  top: 116px;
+  box-sizing: border-box;
+  width: 235px;
+  padding: 0 0;
+  justify-content: space-between;
+}
+.header_left {
+  position: absolute;
+  width: 2.5%;
+  left: 160px;
+  top: 100px;
+  box-sizing: border-box;
+}
+#container2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#container2 > a {
+  color: #959dac;
+  text-align: center;
+  display: block;
+  margin-bottom: 60px;
+}
+
+#container2 > p {
+  text-align: center;
+  font-size: 26px;
+  margin: 0 0 20px 0;
+}
+
+#container2 > button {
+  width: 400px;
+  height: 76px;
+  background-color: linear-gradient(45deg, #465efb, #af52de);
+  border: none;
+  border-radius: 30px;
+}
+
+#container2 > button > a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
