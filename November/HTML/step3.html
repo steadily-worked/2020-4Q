@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href="step3.css" />
+
+
+
+</head>
+
+<body>
+        <div id = 'cancel'>
+            <div id="cancel_alert">
+                <img>
+                <span>해당 주문을 취소하시겠습니까?</span>
+                <button></button>
+            </div>
+        </div>
+        <header>
+            <div class = 'header_right'>
+                <div id='my_page'><a class="test" href="/confirmations/my_order/" target="my_page">마이페이지</a></div>
+                <div id='logout'><a href="/accounts/logout/" target="logout">로그아웃</a></div>
+            </div>
+            <div class = 'header_left'>
+                <a href= "{% url 'home' %}" > <img style="width: 48px; height: 54.47px;" src="/static/Group-1.png" alt="로고"></div></a>
+            </div>
+        </header>
+
+        <section>
+            <div class="section_1">
+                <div class = 'bar_box'>
+                    <div id='circle'></div>
+                    <div id='circle'></div>
+                    <div id='circle'></div>
+                    <div id='circle' style="background-color:#7558EE"></div>
+                </div>
+                <div style=" position: absolute; left: 50%; transform: translate(-50%, 0);; bottom:2.50rem; display: flex; flex-direction: column; align-items: center;">
+                    <div id='my_page' style= 'font-size: 1.375rem; margin-bottom: 10px;'>주문완료</div>
+                    <div style="font-family: 'Open Sans', sans-serif; font-size: 1rem; color: #959DAC; ">
+                        주문취소
+                    </div>
+                </div>
+            </div>
+
+            <div class='section_2'>
+                <div id="time">
+                    <div style='font-size: 1rem; color: #7558EE;'>픽업시간</div>
+
+                    <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                        <div id="time_box"></div>
+                        <div id="time_box"></div>
+                    </div>
+                </div>
+                <div id="printer_info"></div>
+            </div>
+
+            <div class="secion_3">
+                <div id='printer_list'>
+                    <div id="printer_list_top">
+                        <div style="font-size: 1.2rem; color: #3E3E3E;">프린트 리스트</div>
+                        <button style="background-color: #7558EE; color: white; border-radius: 10px 10px 10px 10px; cursor: pointer;">설정 보기</button>
+                    </div>
+                </div>
+                <button id='recipt_button' value="영수증">
+                    <img src="/static/recipt.png" >
+                </button>
+            </div>
+        </section>
+
+</body>

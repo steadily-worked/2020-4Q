@@ -1,0 +1,154 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 0;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  width: 100%;
+  height: 20%;
+}
+section {
+  width: 100%;
+  height: 80%;
+}
+button {
+  border: none;
+  background-color: transparent;
+}
+a[target="my_page"] {
+  text-decoration: none;
+  color: #7558ee;
+  letter-spacing: 0.98px;
+}
+a[target="logout"] {
+  text-decoration: none;
+  color: #959dac;
+  letter-spacing: 0.98px;
+}
+input[type="radio"] {
+  display: none;
+}
+
+.header_right {
+  position: absolute;
+  display: flex;
+  right: 178px;
+  top: 116px;
+  box-sizing: border-box;
+  width: 235px;
+  padding: 0 0;
+  justify-content: space-between;
+}
+.header_left {
+  position: absolute;
+  width: 2.5%;
+  left: 160px;
+  top: 100px;
+  box-sizing: border-box;
+}
+.bar_box {
+  position: absolute;
+  display: flex;
+  width: 12.5rem;
+  height: 1rem;
+  top: 3.125em;
+  left: 50%;
+  transform: translate(-50%, 0);
+  justify-content: space-between;
+}
+.section_1 {
+  width: 100%;
+  height: 25%;
+  position: relative;
+}
+.section_2 {
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+.secion_3 {
+  width: 100%;
+  height: 25%;
+  background-color: darkgreen;
+  position: relative;
+}
+#my_page {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 1.188rem;
+}
+#logout {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.188rem;
+}
+#circle {
+  width: 16px;
+  height: 16px;
+  background-color: #d4d2e6;
+  border-radius: 50%;
+}
+#time {
+  width: 11%;
+  height: 134px;
+  background-color: crimson;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+}
+#printer_info {
+  width: 11%;
+  height: 248px;
+  background-color: blue;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+}
+#time_box {
+  width: 49%;
+  height: 120px;
+  background-color: #7558ee;
+  border-radius: 5px 5px 5px 5px;
+}
+#printer_list {
+  position: absolute;
+  width: 31.5%;
+  height: 140px;
+  background-color: darkgrey;
+  left: 35%;
+  transform: translate(-3%, 0);
+}
+#printer_list_top {
+  display: flex;
+  justify-content: space-between;
+}
+#recipt_button {
+  cursor: pointer;
+  position: absolute;
+  bottom: 60px;
+  left: 35%;
+  right: 35%;
+  transform: translate(-10%, 0);
+}
+#cancel {
+  z-index: 1;
+  background-color: darkslategrey;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.8;
+  margin: 0 0;
+}
+#cancel_alert {
+  width: 558px;
+  height: 260px;
+  border-radius: 30px 300x 30px 30px;
+}
