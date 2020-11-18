@@ -97,7 +97,7 @@ const print = function () {
 print();
 const printAgain = print;
 printAgain();
-const sumAgain = sum;
+const sumAgain = sum; // 71행의 sum함수를 불러온 것.
 console.log(sumAgain(1, 3));
 
 // 9. Callback function using function expression

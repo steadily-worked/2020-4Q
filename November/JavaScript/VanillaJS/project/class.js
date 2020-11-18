@@ -38,21 +38,23 @@ class User {
   // 32행의 this.age = age에서 this.age를 가져옴
   set age(value) {
     this._age = value < 0 ? 0 : value;
+    // value가 0보다 작으면 0을 쓰고 아니면 value를 할당
   }
 }
 
 const user1 = new User("steadily", "Job", -1);
-console.log(user1.age);
+console.log(user1.age); // 40행에 따라서, age value가 0보다 작으므로 콘솔에 찍으면 0을 할당함.
 
 // 3. Public & Private
 
 class Experiment {
   publicField = 2;
-  #privateField = 0;
+  privateField = 0;
 }
 const experiment = new Experiment();
 console.log(experiment.publicField);
 console.log(experiment.privateField);
+// 52행 변수 앞에 #를 붙이면 undefined고 떼면 변수에 할당된 값이 나옴
 
 // 4. Static properties and methods
 
@@ -90,10 +92,11 @@ class Shape {
   }
 }
 
-class Rectangle extends Shape {}
+class Rectangle extends Shape {} // 이렇게 괄호만 있다면, Shape와 완전히 똑같은 것이라는 뜻이고
 class Triangle extends Shape {
+  // 괄호 안에 새롭게 추가된 게 있는 경우 Shape를 가져오고 + 추가로 지정한다는 뜻
   draw() {
-    super.draw();
+    super.draw(); // super키워드는 부모 오브젝트의 함수 호출 시 사용한다.
     console.log("세모");
   }
   getArea() {

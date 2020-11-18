@@ -12,6 +12,7 @@ class Habit extends Component {
   handleDelete = () => {
     this.props.onDelete(this.props.habit);
   };
+
   render() {
     const { name, count } = this.props.habit;
     // props.habit으로 지정을 해줬기 때문에 더이상 기존 4-6행의 state는 사용되지 않는다.
