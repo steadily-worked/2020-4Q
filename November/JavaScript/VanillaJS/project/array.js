@@ -72,6 +72,7 @@ console.log(fruits); // 하면 1번 인덱스에 있던 게 지워지고 'c', 'd
 const fruits2 = ["A", "B"];
 const newFruits = fruits.concat(fruits2);
 console.log(newFruits); // 추가된 fruits2의 요소가 맨 뒤에 순서대로 추가됨
+// 언뜻 보면 push와 비슷한 것 같지만.. 두 개의 배열을 아예 합치는 것과 just push는 차이점이 있다.
 
 // 5. Searching
 // find the index
