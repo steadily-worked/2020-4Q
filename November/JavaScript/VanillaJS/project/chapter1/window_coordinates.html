@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    html {
+      height: 100%;
+      overflow: auto;
+    }
+    body {
+      height: 100%;
+    }
+    div {
+      margin-bottom: 4px;
+      border-radius: 4px;
+    }
+
+    #square {
+      width: 250px;
+      height: 250px;
+      background-color: beige;
+      border: 1px solid black;
+    }
+    #not-square {
+      width: 250px;
+      height: 250px;
+      background-color: black;
+    }
+  </style>
+  <body>
+    <button id="button1">Scroll by 100px(y)</button>
+    <button id="button2">Scroll to 100px(y)</button>
+    <button id="button3">Scroll into special</button>
+    <div id="not-square"></div>
+    <div id="not-square"></div>
+    <div id="not-square"></div>
+    <div id="square"></div>
+    <div id="not-square"></div>
+    <div id="not-square"></div>
+    <div id="not-square"></div>
+    <div id="not-square"></div>
+    <div id="not-square"></div>
+
+    <script>
+      //      const square = document.getElementById("square");
+      //      function printClient(e) {
+      //        console.log("client: " + e.clientX + ", " + e.clientY);
+      //      }
+      //      function printPage(e) {
+      //        console.log("page: " + e.pageX + ", " + e.pageY);
+      //      }
+      //      square.addEventListener("click", printClient);
+      //      square.addEventListener("click", printPage);
+      //      const special = document.querySelector("#square");
+      //      special.addEventListener("click", (event) => {
+      //        const rect = special.getBoundingClientRect();
+      //        console.log(rect);
+      //        console.log(`client: ${event.clientX}, ${event.clientY}`);
+      //        console.log(`page: ${event.pageX}, ${event.pageY}`);
+      //      });
+
+      const btn1 = document.getElementById("button1");
+      const btn2 = document.getElementById("button2");
+      const btn3 = document.getElementById("button3");
+      btn1.addEventListener("click", () => {
+        window.scrollBy(0, 100);
+      });
+      btn2.addEventListener("click", function () {
+        window.scrollTo(0, 300);
+      });
+      btn3.addEventListener("click", () => {
+        const square = document.getElementById("square");
+        square.scrollIntoView();
+      });
+    </script>
+  </body>
+</html>
