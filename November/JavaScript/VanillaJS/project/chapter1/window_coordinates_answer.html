@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    html {
+      height: 100%;
+      overflow: auto;
+    }
+    body {
+      height: 100%;
+    }
+    div {
+      margin-bottom: 4px;
+      border-radius: 4px;
+    }
+
+    #square {
+      width: 250px;
+      height: 250px;
+      background-color: beige;
+      border: 1px solid black;
+    }
+    #not-square {
+      width: 250px;
+      height: 250px;
+      background-color: black;
+    }
+    aside {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+    }
+  </style>
+  <body>
+    <div id="not-square"></div>
+    <div id="not-square"></div>
+    <div id="not-square"></div>
+    <div id="square"></div>
+    <div id="not-square"></div>
+    <div id="not-square"></div>
+    <div id="not-square"></div>
+    <div id="not-square"></div>
+    <div id="not-square"></div>
+    <aside>
+      <button id="scrollBy">Scroll by 100px(y)</button>
+      <button id="scrollTo">Scroll to 100px(y)</button>
+      <button id="scrollInto">Scroll into square</button>
+    </aside>
+    <script>
+      const scrollBy1 = document.getElementById("scrollBy");
+      const scrollTo1 = document.getElementById("scrollTo");
+      const scrollInto1 = document.getElementById("scrollInto");
+      scrollBy1.addEventListener("click", () => {
+        window.scrollBy({ top: 100, left: 0, behavior: "smooth" });
+      });
+
+      scrollTo1.addEventListener("click", () => {
+        window.scrollTo(0, 100);
+      });
+
+      scrollInto1.addEventListener("click", () => {
+        square.scrollIntoView();
+      });
+    </script>
+  </body>
+</html>
