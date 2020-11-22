@@ -50,7 +50,7 @@
             id="inputbox"
             type="text"
             name="username"
-            type="text"
+            value=""
             placeholder="-포함 특수문자 불가능"
           />
         </div>
@@ -60,24 +60,48 @@
             id="inputbox1"
             type="password"
             name="password1"
+            value=""
             placeholder="8~16자, 대소문자 구분"
           />
           <input
             id="inputbox2"
             type="password"
             name="password2"
+            value=""
             placeholder="비밀번호 확인"
           />
         </div>
+        <div id="notification">
+          <input type="checkbox" id="chk" />
+          <label for="chk"
+            >문자로 인쇄물 상태 업데이트 및 픽업 알림을 받을래요</label
+          >
+        </div>
+        <div id="notification-box">
+          <input
+            id="inputbox"
+            type="text"
+            placeholder="연락받을 전화번호"
+            value=""
+          />
+        </div>
         <div class="signup_button_box">
-          <button id="signup_button" type="submit" value="회원가입">
-            <img src="/static/signup_button.png" width="100%" height="42.7%" />
-          </button>
+          <button id="signup_button" type="submit">회원가입</button>
         </div>
       </form>
     </div>
 
     <script>
+      const notification = document.getElementById("chk");
+      const box = document.getElementById("notification-box");
+      notification.addEventListener("click", () => {
+        if (box.style.display == "block") {
+          box.style.display = "none";
+        } else {
+          box.style.display = "block";
+        }
+      });
+
       const error = "{{error}}";
       if (error) {
         alert(error);

@@ -32,33 +32,42 @@ header {
 #title {
   margin-bottom: 67px;
 }
+
 #form {
-  width: 100%;
+  width: 585px;
   height: auto;
-  text-align: center;
   justify-content: center;
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
-  color: #959dac;
-  margin: 10% auto;
+  margin: 20px auto 56px auto;
 }
-#id-container > p {
-  margin: 0;
-  position: relative;
-  left: 15%;
-  text-align: left;
+#title > p {
+  text-align: center;
+  font-size: 22px;
+  color: #262728;
 }
+#id-container > p,
 #password-container > p {
-  margin: 0 0 15px 0;
+  margin: 0;
+  color: #3b3d40;
   position: relative;
-  left: 15%;
   text-align: left;
+  margin: 0 0 15px 0;
 }
 #inputbox,
 #inputbox1,
-#inputbox2 {
-  width: 70%;
+#inputbox2,
+#notification-box > #inputbox {
+  padding-left: 5%;
+  width: 95%;
+  margin: 0 auto;
   height: 72px;
+  border-radius: 10px;
+  border: none;
+  display: block;
+  background-color: #fafafa;
+  font-size: 16px;
+  letter-spacing: 0.8px;
 }
 #inputbox {
   margin-bottom: 43px;
@@ -66,22 +75,75 @@ header {
 #inputbox1 {
   margin-bottom: 10px;
 }
+#inputbox2 {
+  margin-bottom: 50px;
+}
+#notification-box > #inputbox {
+  margin-bottom: 40px;
+}
+input[id="chk"] + label {
+  margin-bottom: 23px;
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  cursor: pointer;
+  color: #959dac;
+  font-size: 19px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+input[id="chk"]:checked + label {
+  color: #7558ee;
+}
+
+input[type="text" i] {
+  padding: 0;
+}
+input[id="chk"] + label:before {
+  content: " ";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  line-height: 24px;
+  text-align: left;
+  vertical-align: middle;
+  background: #959dac;
+  border-radius: 3px;
+}
+input[id="chk"]:checked + label:before {
+  content: url(""); /* 여기다가 체크박스 이미지 찾아서 넣으면 됩니다~ */
+  background: #7558ee;
+}
+input[type="checkbox"] {
+  display: none;
+}
+#notification,
+#notification-box {
+  width: 100%;
+}
+#notification-box {
+  display: none;
+  text-align: center;
+}
 .signup_button_box {
-  width: 70%;
-  height: 100%;
+  margin: 0 auto;
+  width: 100%;
   position: relative;
 }
 #signup_button {
-  background-color: #ffffff;
-  border: none;
+  background: transparent
+    linear-gradient(99deg, var(--unnamed-color-465efb) 0%, #af52de 100%) 0% 0%
+    no-repeat padding-box;
+  background: transparent linear-gradient(99deg, #465efb 0%, #af52de 100%) 0% 0%
+    no-repeat padding-box;
   border-radius: 5px;
-  position: absolute;
-  top: 0;
-  width: 58.8%;
-  position: absolute;
-  left: 21%;
-  right: 21%;
+  border: none;
+  width: 100%;
+  height: 74px;
+  text-align: center;
+  font-size: 20px;
+  color: #ffffff;
   margin: 0 auto;
-  margin-bottom: 9.375em;
-  padding: 0 0;
 }
